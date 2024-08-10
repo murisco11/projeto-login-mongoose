@@ -1,0 +1,15 @@
+<%- include('includes/head') %>
+  <%- include('includes/messages') %>
+    <h1>
+      Você está logado na conta <%= user.email %> %>
+    </h1>
+    <form action="/logout" method="GET">
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+      <button type="submit">Deslogar</button>
+    </form>
+    <br>
+    <form action="/login-cadastro/deletar_conta" method="GET">
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+      <button type="submit">Deletar conta</button>
+    </form>
+    <%- include('includes/footer') %>
